@@ -1,0 +1,64 @@
+body {
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: rgb(216, 74, 74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.1)
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 15px;
+    width: 40rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+.collapsible:hover {
+    background-color: #ccc;
+}
+.dramaEntry {
+    display: none;
+    overflow: hidden;
+    border: 1px solid rgb(231, 231, 231);
+    background-color: gainsboro;
+    border-radius: 5px;
+    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.1);
+    margin: 0.5em;
+    padding: 0.3rem;
+    p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.commentBox{
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 5px;
+    margin-top: -0.2rem;
+    min-height: 3rem;
+    max-width: 38rem;
+    padding: 0.3rem 0.5rem;
+}
