@@ -37,8 +37,10 @@ dramaController.createEntry = (req, res, next) => {
 
 dramaController.deleteEntry = (req, res, next) => {
     const {_id} = req.body;
+    console.log('We are in deleteEntry and this is req.body: ', req)
     models.Drama.deleteOne({_id})
         .then(data => {
+            console.log("successfully deleted");
             res.locals.deleted = data;
             return next();
         })
@@ -51,11 +53,13 @@ dramaController.deleteEntry = (req, res, next) => {
         })
 }
 
-dramaController.deleteEntry = (req, res, next) => {
+dramaController.findEntry = (req, res, next) => {
     const {_id} = req.body;
-    models.Drama.deleteOne({_id})
+    console.log(req.body)
+    models.Drama.find({_id})
         .then(data => {
             res.locals.deleted = data;
+            console.log("data deleted");
             return next();
         })
         .catch((err) => {
@@ -69,7 +73,8 @@ dramaController.deleteEntry = (req, res, next) => {
 
 dramaController.updateEntry = (req, res, next) => {
     const {_id, name, overall_rating, thoughts} = req.body;
-    models.Drama.findOneAndUpdate({_id}, {name, overall_rating, thoughts})
+    console.log(req.body);
+    models.Drama.findOneAndUpdate({_id}, {name, overall_rating, thoughts}, {returnDocument: 'after'})
         .then(data => {
             res.locals.updated = data;
             return next();

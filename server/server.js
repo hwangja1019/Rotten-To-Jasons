@@ -15,14 +15,28 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 app.get('/entries',
     dramaController.getAllEntries, 
     (req, res) => {
-        console.log("this worked")
+        console.log("this is all entries")
         res.status(200).send(res.locals.allEntries)
+    }
+)
+app.delete('/delete', 
+    dramaController.deleteEntry, 
+    (req, res) => {
+        console.log('in delete router')
+        res.status(202).send(res.locals.deleted);
+    }
+)
+app.patch('/edit',
+    dramaController.updateEntry, 
+    (req,res) =>{
+        console.log('in patch route')
+        res.status(200).send(res.locals.updated)
     }
 )
 app.post('/', 
     dramaController.createEntry, 
     (req, res) => {
-        res.status(200).send(res.locals.entry)
+        res.status(200).send(res.locals.entry);
     }
 )
 

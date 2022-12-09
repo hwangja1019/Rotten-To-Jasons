@@ -16,12 +16,25 @@ header{
     box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.1)
 }
 
+.createForm{
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: #eee;
+    box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.1);
+}
 .form-field{
     display: flex;
     flex-direction: column;
     border: none;
 }
-
+.entryContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .collapsible {
     background-color: #eee;
     color: #444;
@@ -31,13 +44,22 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    border: none;
+    border: 1px solid darken(#eee, 1%);
+    border-radius: 5px;
+    margin:0.5rem;
     text-align: left;
     outline: none;
     font-size: 15px;
+    p{
+        font-weight: bolder;
+    }
   }
 .collapsible:hover {
     background-color: #ccc;
+}
+.image{
+    height: auto;
+    width: 3rem;
 }
 .dramaEntry {
     display: none;
@@ -46,10 +68,28 @@ header{
     background-color: gainsboro;
     border-radius: 5px;
     box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.1);
-    margin: 0.5em;
+    margin: 0.2em 0.5rem 1rem 0.5rem;
     padding: 0.3rem;
+    width: 38rem;
+    font-size: 1.5rem;
     p {
         margin-bottom: 0.5rem;
+    }
+}
+
+.dramaEntryEdit {
+    display: block;
+    border: 1px solid rgb(231, 231, 231);
+    background-color: gainsboro;
+    border-radius: 5px;
+    box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.1);
+    margin: 0.5em;
+    margin: 0.5em 0.5rem 1rem 0.5rem;
+    padding: 0.3rem;
+    width: 38rem;
+    p {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -61,4 +101,5 @@ header{
     min-height: 3rem;
     max-width: 38rem;
     padding: 0.3rem 0.5rem;
+    font-size: 1.1rem;
 }

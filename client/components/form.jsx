@@ -1,26 +1,29 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
 
-function addToEntry(e){
-    e.preventDefault();
-    console.log(e)
-    const [name, overall_rating, thoughts] = [e.target[1].value, e.target[2].value, e.target[3].value]
-    e.target[1].value = '';
-    e.target[2].value = '';
-    e.target[3].value = '';
-    axios.post('/', {
-        name,
-        overall_rating,
-        thoughts
-    })
-    .then(res => {console.log(res.json())})
-    .catch((err) => console.log(err))
-}
+
 
 
 const Form = (props) => {
+    function addToEntry(e){
+        e.preventDefault();
+        console.log(e)
+        const [name, overall_rating, thoughts] = [e.target[1].value, e.target[2].value, e.target[3].value]
+        e.target[1].value = '';
+        e.target[2].value = '';
+        e.target[3].value = '';
+        axios.post('/', {
+            name,
+            overall_rating,
+            thoughts
+        })
+        .then(res => props.add(res.data))
+        .catch((err) => console.log(err))
+
+    }
     return (
-        <form onSubmit={addToEntry}>
+        <form className="createForm" onSubmit={addToEntry}>
+            <h2>Post another entry! (Only if you're Jason)</h2>
             <fieldset className='form-field'>
                 <label htmlFor="addMarket">Title: </label>
                 <input type="text" id="title"></input>

@@ -24,6 +24,10 @@ module.exports={
             '/': {
                 target: 'http://localhost:9500',
                 router: () => 'http://localhost:8080'
+            },
+            '/delete' :{
+                target: 'http://localhost:9500',
+                router: () => 'http://localhost:8080'
             }
         },
         static: ["./public"],
@@ -67,7 +71,16 @@ module.exports={
                 //     }
                 //   }
                 ]
-              }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: "file-loader",
+                    options: {},
+                  },
+                ],
+              },
         ]
     }
 }
